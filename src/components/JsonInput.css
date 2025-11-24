@@ -1,0 +1,42 @@
+.json-input {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: var(--radius-xl);
+}
+
+.json-input .panel-header {
+  padding: var(--spacing-md) var(--spacing-lg);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: none;
+}
+
+.panel-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+  background: var(--color-accent-light);
+  padding: var(--spacing-xs) var(--spacing-md);
+  border-radius: var(--radius-md);
+}
+
+.panel-hint {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+}
+
+.editor-container {
+  flex: 1;
+  overflow: hidden;
+  border-radius: 0 0 var(--radius-xl) var(--radius-xl);
+}
+
+.editor-container .monaco-editor,
+.editor-container .monaco-editor .margin,
+.editor-container .monaco-editor-background {
+  background-color: transparent !important;
+}

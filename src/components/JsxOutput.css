@@ -1,0 +1,67 @@
+.jsx-output {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+  border-radius: var(--radius-xl);
+}
+
+.jsx-output.has-error {
+  border-color: rgba(193, 123, 110, 0.3);
+}
+
+.jsx-output .panel-header {
+  padding: var(--spacing-md) var(--spacing-lg);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: none;
+}
+
+.jsx-output .panel-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+  background: var(--color-accent-light);
+  padding: var(--spacing-xs) var(--spacing-md);
+  border-radius: var(--radius-md);
+}
+
+.jsx-output .panel-hint {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+}
+
+.jsx-output .editor-container {
+  flex: 1;
+  overflow: hidden;
+  border-radius: 0 0 var(--radius-xl) var(--radius-xl);
+}
+
+.jsx-output .editor-container .monaco-editor,
+.jsx-output .editor-container .monaco-editor .margin,
+.jsx-output .editor-container .monaco-editor-background {
+  background-color: transparent !important;
+}
+
+.error-banner {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: var(--spacing-sm) var(--spacing-md);
+  background: rgba(193, 123, 110, 0.1);
+  border-top: 1px solid rgba(193, 123, 110, 0.2);
+  color: var(--color-error);
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  backdrop-filter: blur(8px);
+}
+
+.error-icon {
+  font-size: 1rem;
+}
