@@ -3,9 +3,10 @@ import './Header.css'
 interface HeaderProps {
   onConvert?: () => void
   onCopy?: () => void
+  onPreview?: () => void
 }
 
-export default function Header({ onConvert, onCopy }: HeaderProps) {
+export default function Header({ onConvert, onCopy, onPreview }: HeaderProps) {
   return (
     <header className="header">
       <div className="header-content">
@@ -19,6 +20,10 @@ export default function Header({ onConvert, onCopy }: HeaderProps) {
           <button className="btn btn-convert" onClick={onConvert}>
             <span className="btn-icon">✦</span>
             Convert
+          </button>
+          <button className="btn btn-preview" onClick={onPreview}>
+            <span className="btn-icon">👁️</span>
+            Preview
           </button>
           <button className="btn btn-copy" onClick={onCopy}>
             <span className="btn-icon">◇</span>

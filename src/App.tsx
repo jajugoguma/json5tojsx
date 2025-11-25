@@ -7,6 +7,7 @@ import * as prettierPluginEstree from 'prettier/plugins/estree'
 import Header from './components/Header'
 import JsonInput from './components/JsonInput'
 import JsxOutput from './components/JsxOutput'
+import PreviewModal from './components/PreviewModal'
 import './App.css'
 
 const DEFAULT_JXM = `{
@@ -115,6 +116,7 @@ function App() {
     success: true,
     jsx: '// Converting...'
   })
+  const [isPreviewOpen, setIsPreviewOpen] = useState(false)
 
   useEffect(() => {
     let cancelled = false
@@ -147,9 +149,13 @@ function App() {
     // This button can be used for visual feedback or future manual conversion mode
   }, [])
 
+  const handlePreview = useCallback(() => {
+    setIsPreviewOpen(true)
+  }, [])
+
   return (
     <div className="app">
-      <Header onConvert={handleConvert} onCopy={handleCopy} />
+      <Header onConvert={handleConvert} onCopy={handleCopy} onPreview={handlePreview} />
       <main className="main-content">
         <div className="editor-grid">
           <JsonInput value={jsonInput} onChange={handleInputChange} />
@@ -159,6 +165,11 @@ function App() {
           />
         </div>
       </main>
+      <PreviewModal
+        isOpen={isPreviewOpen}
+        onClose={() => setIsPreviewOpen(false)}
+        jsxCode={result.jsx}
+      />
     </div>
   )
 }

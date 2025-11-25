@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@babel/standalone": "^7.28.5",
     "@monaco-editor/react": "^4.6.0",
     "json5": "^2.2.3",
     "jsonx": "^2.0.0",
@@ -19,6 +20,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.15.0",
+    "@types/babel__standalone": "^7.1.9",
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",
     "@vitejs/plugin-react": "^4.3.4",
